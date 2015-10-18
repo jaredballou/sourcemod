@@ -12,7 +12,7 @@ except:
 		sys.stderr.write('http://www.alliedmods.net/ambuild\n')
 	sys.exit(1)
 
-parser = run.PrepareBuild(sourcePath=sys.path[0])
+parser = run.BuildParser(sourcePath=sys.path[0], api='2.1')
 parser.default_build_folder = 'obj-' + parser.target_platform
 parser.options.add_option('--hl2sdk-root', type=str, dest='hl2sdk_root', default=None,
 		                   help='Root search folder for HL2SDKs')
