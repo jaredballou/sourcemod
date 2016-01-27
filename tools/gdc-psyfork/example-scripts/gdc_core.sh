@@ -1,14 +1,17 @@
 #!/bin/bash
 
-SCRIPT_PATH=/users/psychonic/gdc
+SCRIPT_PATH=/home/insserver
 
 # with trailing slash or undefined for system default
 MONO_BIN_PATH=/apps/mono-2.10.9/bin/
 
-DD_PATH=${SCRIPT_PATH}/dd
-ENGINE_PATH=${DD_PATH}/${ENGINE_PATH_FROM_DD}
+DD_PATH=${SCRIPT_PATH}/serverfiles
+ENGINE_PATH=${DD_PATH}
+#/${ENGINE_PATH_FROM_DD}
 
-SM_PATH=${SCRIPT_PATH}/sourcemod-central
+SM_PATH=/home/insserver/serverfiles/insurgency/addons/sourcemod
+GAMEDATA_DIR=/home/insserver/serverfiles/insurgency/addons/sourcemod/gamedata
+#${SCRIPT_PATH}/sourcemod-central
 SMRCON_PATH=${SCRIPT_PATH}/SMRCon
 
 # Do not run this file directly. It is meant to be called by other scripts
@@ -18,6 +21,7 @@ GAME_BIN=${ENGINE_PATH}/${GAME_DIR}/bin/server
 STEAMINF=${ENGINE_PATH}/${GAME_DIR}/steam.inf
 
 GDC_PATH=${SM_PATH}/tools/gdc-psyfork
+GDC_PATH=/home/insserver/insurgency-tools/thirdparty/sourcemod/tools/gdc-psyfork
 GDC_BIN=${GDC_PATH}/Release/gdc
 
 if [ "${GAMEDATA_DIR}" == "" ] ; then
@@ -126,9 +130,9 @@ if [ -e ${GAME_SCRIPT_NAME}_repos.sh ] ; then
 fi
 
 # update sourcemod
-echo Updating SourceMod repo
-cd ${SM_PATH}
-hg pull -u
+#echo Updating SourceMod repo
+#cd ${SM_PATH}
+#hg pull -u
 
 echo -e "\n"
 

@@ -29,6 +29,7 @@ CFLAGS += -D_LINUX -Dstricmp=strcasecmp -D_stricmp=strcasecmp -D_strnicmp=strnca
 	-Wno-uninitialized -mfpmath=sse -msse -DHAVE_STDINT_H -DSM_DEFAULT_THREADER -DPLATFORM_LINUX -m32
 CPPFLAGS += -Wno-non-virtual-dtor -fno-exceptions -fno-rtti -std=c++11 -Wno-unused
 
+ARCH = -m32
 ################################################
 ### DO NOT EDIT BELOW HERE FOR MOST PROJECTS ###
 ################################################
@@ -61,7 +62,8 @@ all:
 	$(MAKE) -f Makefile gdc
 
 gdc: $(OBJ_LINUX)
-	$(CPP) $(INCLUDE) $(OBJ_LINUX) $(LINK) -m32 -o$(BIN_DIR)/$(BINARY)
+	$(CPP) $(INCLUDE) $(OBJ_LINUX) $(LINK) $(ARCH) -o$(BIN_DIR)/$(BINARY)
+
 
 debug:
 	$(MAKE) -f Makefile all DEBUG=true

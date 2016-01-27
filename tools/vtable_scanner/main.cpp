@@ -42,7 +42,8 @@ int main(int argc, char **argv)
 	if (pVtable == NULL)
 	{
 		char startSym[128];
-		snprintf(startSym, sizeof(startSym), "_ZTV%d%s", strlen(argv[2]), argv[2]);
+		snprintf(startSym, sizeof(startSym), "_ZN%d%s", strlen(argv[2]), argv[2]);
+		fprintf(stderr, "Trying \"%s\"\n", startSym);
 		pVtable = (void **)dlsym(handle, startSym);
 	}
 
