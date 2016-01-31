@@ -1,6 +1,6 @@
 [submodule "public/amtl"]
 	path = public/amtl
-	url = https://github.com/alliedmodders/amtl
+	url = git@github.com:jaredballou/amtl
 [submodule "sourcepawn"]
 	path = sourcepawn
-	url = https://github.com/alliedmodders/sourcepawn
+	url = git@github.com:jaredballou/sourcepawn
